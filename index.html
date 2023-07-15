@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Homepage</title>
+  </head>
+
+  <body>
+    <div id="main-container" class="w-100 vh-100">
+      <div
+        id="navbar"
+        class="d-block d-flex justify-content-between align-items-center navbar"
+        style="height: 114px"
+      >
+        <h1 id="logo" class="logo">LOGO</h1>
+        <div
+          id="navbar-content"
+          class="navbar-container d-flex align-items-center p-2"
+        >
+          <div class="mode d-flex justify-content-center p-2">
+            <div
+              class="moon-img rounded-circle p-2 d-flex justify-content-center align-items-center"
+            >
+              <img src="assets/images/svg/moon.svg" id="moon" />
+            </div>
+
+            <div class="night-img">
+              <img src="assets/images/svg/night.svg" id="night" />
+            </div>
+          </div>
+
+          <div
+            class="notification d-flex align-items-center justify-content-center rounded-circle p-2"
+          >
+            <div
+              class="notification-img rounded-circle p-2 d-flex justify-content-center align-items-center"
+            >
+              <img src="assets/images/svg/notification.svg" />
+            </div>
+          </div>
+          <div class="vertical-line"></div>
+          <div
+            class="user-img d-flex align-items-center justify-content-center p-2"
+          >
+            <div>
+              <img src="assets/images/png/user.png" />
+            </div>
+            <div class="user-info d-flex flex-column justify-content-center">
+              <h3 class="user-name">James Bond</h3>
+              <p>Jamesbond007@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- card  -->
+      <div id="cardContainer">
+        <div
+          class="card text-center mx-auto mt-5 bg-transparent shadow-0 border-0"
+          style="width: 400px"
+        >
+          <div class="card-header shadow-0 border-0">
+            <img
+              src="assets/images/bear.png"
+              class="card-img-top mx-auto card-image"
+              alt="bear-img"
+            />
+            <img
+              src="assets/images/Rectangle.png"
+              class="card-img-top mx-auto rectangle-image"
+              alt="rectangle-im-img"
+            />
+            <div class="stars">
+              <img
+                src="assets/images/star1.svg"
+                class="card-img-top mx-auto star-image1"
+                alt="star-img"
+              />
+              <img
+                src="assets/images/star2.svg"
+                class="card-img-top mx-auto star-image2"
+                alt="star-img"
+              />
+              <img
+                src="assets/images/star3.svg"
+                class="card-img-top mx-auto star-image3"
+                alt="star-img"
+              />
+              <img
+                src="assets/images/star4.svg"
+                class="card-img-top mx-auto star-image4"
+                alt="star-img"
+              />
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">
+              Welcome, <b> James Bond </b> <img src="assets/images/wave.svg" />
+            </h5>
+            <p class="card-text card-desc">
+              To get started habit tracking with rituals, please add a new habit
+              by clicking on the button below.
+            </p>
+            <button id="addHabitsBtn" class="btn btn-primary add-btn">
+              + Add Habits
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- habbit list  -->
+      <div id="habbitList" class="text-white" style="display: none">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="count">
+            Added Habbits <span class="" id="added-habits"> </span>
+          </h2>
+          <button
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#habitmodal"
+            class="btn btn-primary add-btn"
+          >
+            + Add Habits
+          </button>
+          <!-- Button trigger modal -->
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="habitmodal"
+            aria-colspan="habit-modal"
+            class="habit-modal"
+            tabindex="-1"
+            aria-labelledby="habitmodalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title d-flex justify-content-center"
+                    id="habitmodalLabel"
+                  >
+                    Add a new habit
+                  </h5>
+                  <button
+                    type="button"
+                    class="text-white bg-transparent border-0"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    X
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="new-habit" style="margin-bottom: 25px">
+                    <input
+                      class="new-habit-input"
+                      placeholder="Enter title here..."
+                      id="new-habit-input"
+                    />
+                  </div>
+                  <!-- list 1  -->
+                  <div class="habit-list" style="margin-bottom: 25px">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <div class="d-flex align-items-center">
+                        <svg
+                          width="24"
+                          style="margin-left: 15px; margin-right: 15px"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6.75992 22H17.2399C19.9999 22 21.0999 20.31 21.2299 18.25L21.7499 9.99C21.8899 7.83 20.1699 6 17.9999 6C17.3899 6 16.8299 5.65 16.5499 5.11L15.8299 3.66C15.3699 2.75 14.1699 2 13.1499 2H10.8599C9.82992 2 8.62992 2.75 8.16992 3.66L7.44992 5.11C7.16992 5.65 6.60992 6 5.99992 6C3.82992 6 2.10992 7.83 2.24992 9.99L2.76992 18.25C2.88992 20.31 3.99992 22 6.75992 22Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10.5 8H13.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12 18C13.79 18 15.25 16.54 15.25 14.75C15.25 12.96 13.79 11.5 12 11.5C10.21 11.5 8.75 12.96 8.75 14.75C8.75 16.54 10.21 18 12 18Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <span>Camera</span>
+                      </div>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="selecthabit"
+                            id="selecthabit1"
+                            onclick="handleRadioClick(this)"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selecthabit1"
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- list 2  -->
+                  <div class="habit-list" style="margin-bottom: 25px">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <div class="d-flex align-items-center">
+                        <svg
+                          style="margin-left: 15px; margin-right: 15px"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.98 10.79V14.79C17.98 15.05 17.97 15.3 17.94 15.54C17.71 18.24 16.12 19.58 13.19 19.58H12.79C12.54 19.58 12.3 19.7 12.15 19.9L10.95 21.5C10.42 22.21 9.56 22.21 9.03 21.5L7.82999 19.9C7.69999 19.73 7.41 19.58 7.19 19.58H6.79001C3.60001 19.58 2 18.79 2 14.79V10.79C2 7.86001 3.35001 6.27001 6.04001 6.04001C6.28001 6.01001 6.53001 6 6.79001 6H13.19C16.38 6 17.98 7.60001 17.98 10.79Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M21.98 6.79001V10.79C21.98 13.73 20.63 15.31 17.94 15.54C17.97 15.3 17.98 15.05 17.98 14.79V10.79C17.98 7.60001 16.38 6 13.19 6H6.79004C6.53004 6 6.28004 6.01001 6.04004 6.04001C6.27004 3.35001 7.86004 2 10.79 2H17.19C20.38 2 21.98 3.60001 21.98 6.79001Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M13.4955 13.25H13.5045"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9.9955 13.25H10.0045"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M6.4955 13.25H6.5045"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <span>Message</span>
+                      </div>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="selecthabit"
+                            id="selecthabit1"
+                            onclick="handleRadioClick(this)"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selecthabit1"
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- list 3  -->
+                  <div class="habit-list" style="margin-bottom: 25px">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <div class="d-flex align-items-center">
+                        <svg
+                          width="24"
+                          style="margin-left: 15px; margin-right: 15px"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M22 16.74V4.67001C22 3.47001 21.02 2.58001 19.83 2.68001H19.77C17.67 2.86001 14.48 3.93001 12.7 5.05001L12.53 5.16001C12.24 5.34001 11.76 5.34001 11.47 5.16001L11.22 5.01001C9.44 3.90001 6.26 2.84001 4.16 2.67001C2.97 2.57001 2 3.47001 2 4.66001V16.74C2 17.7 2.78 18.6 3.74 18.72L4.03 18.76C6.2 19.05 9.55 20.15 11.47 21.2L11.51 21.22C11.78 21.37 12.21 21.37 12.47 21.22C14.39 20.16 17.75 19.05 19.93 18.76L20.26 18.72C21.22 18.6 22 17.7 22 16.74Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12 5.48999V20.49"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M7.75 8.48999H5.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M8.5 11.49H5.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <span>Journal</span>
+                      </div>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="selecthabit"
+                            id="selecthabit1"
+                            onclick="handleRadioClick(this)"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selecthabit1"
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- list 4  -->
+                  <div class="habit-list" style="margin-bottom: 25px">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <div class="d-flex align-items-center">
+                        <svg
+                          style="margin-left: 15px; margin-right: 15px"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.16006 10.87C9.06006 10.86 8.94006 10.86 8.83006 10.87C6.45006 10.79 4.56006 8.84 4.56006 6.44C4.56006 3.99 6.54006 2 9.00006 2C11.4501 2 13.4401 3.99 13.4401 6.44C13.4301 8.84 11.5401 10.79 9.16006 10.87Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M16.41 4C18.35 4 19.91 5.57 19.91 7.5C19.91 9.39 18.41 10.93 16.54 11C16.46 10.99 16.37 10.99 16.28 11"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M4.15997 14.56C1.73997 16.18 1.73997 18.82 4.15997 20.43C6.90997 22.27 11.42 22.27 14.17 20.43C16.59 18.81 16.59 16.17 14.17 14.56C11.43 12.73 6.91997 12.73 4.15997 14.56Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M18.3401 20C19.0601 19.85 19.7401 19.56 20.3001 19.13C21.8601 17.96 21.8601 16.03 20.3001 14.86C19.7501 14.44 19.0801 14.16 18.3701 14"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <span>User</span>
+                      </div>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="selecthabit"
+                            id="selecthabit1"
+                            onclick="handleRadioClick(this)"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selecthabit1"
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- list 5  -->
+                  <div class="habit-list" style="margin-bottom: 25px">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <div class="d-flex align-items-center">
+                        <svg
+                          width="24"
+                          style="margin-left: 15px; margin-right: 15px"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17C17.47 14.26 17.7 14.39 17.95 14.56L21.26 16.91C21.52 17.09 21.7 17.3 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                          />
+                          <path
+                            d="M18.5 9C18.5 8.4 18.03 7.48 17.33 6.73C16.69 6.04 15.84 5.5 15 5.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M22 9C22 5.13 18.87 2 15 2"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <span>Contact</span>
+                      </div>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="selecthabit"
+                            id="selecthabit1"
+                            onclick="handleRadioClick(this)"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selecthabit1"
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- list 6  -->
+                  <div class="habit-list" style="margin-bottom: 25px">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <div class="d-flex align-items-center">
+                        <svg
+                          style="margin-left: 15px; margin-right: 15px"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 2V5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M16 2V5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M7 13H15"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M7 17H12"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M16 3.5C19.33 3.68 21 4.95 21 9.65V15.83C21 19.95 20 22.01 15 22.01H9C4 22.01 3 19.95 3 15.83V9.65C3 4.95 4.67 3.69 8 3.5H16Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <span>Writing</span>
+                      </div>
+                      <div class="form-check">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="selecthabit"
+                            id="selecthabit1"
+                            onclick="handleRadioClick(this)"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selecthabit1"
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-center"
+                  style="margin-bottom: 25px"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    style="
+                      background-color: transparent !important;
+                      border: 1px solid #545864 !important;
+                      margin-right: 25px;
+                      width: 215px;
+                      border-radius: 8px;
+                      height: 60px;
+                    "
+                    data-bs-dismiss="modal"
+                  >
+                    cancel
+                  </button>
+                  <button
+                    id="next-button"
+                    onclick="addHabitCard()"
+                    type="button"
+                    class="btn btn-primary"
+                    style="
+                      border-radius: 8px;
+                      height: 60px;
+
+                      width: 215px !important;
+                      background-color: #0031b4;
+                    "
+                  >
+                    Next ->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- list added  -->
+        <div class="row habbit-card-row" id="habit-list-container"></div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<script type="text/javascript" src="assets/js/script.js"></script>
