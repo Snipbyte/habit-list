@@ -206,6 +206,9 @@ body {
 .hidden {
   display: none;
 }
+.footer-section .icons i {
+  color: #0031b4;
+}
 
 /* Styles for dark mode */
 .dark-mode {
@@ -254,51 +257,36 @@ body {
 }
 
 @media (max-width: 480px) {
+  .navbar-container {
+    width: 100% !important;
+  }
   .navbar {
     flex-direction: column;
     height: 270px !important;
-    width: 100%;
+    width: 100% !important;
     padding: 20px;
   }
-  .logo{
+  .logo {
     margin: auto !important;
   }
-}
-
-@media (max-width: 576px) {
-  .d-flex.justify-content-between.align-items-center {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .count,
-  .add-btn {
-    width: 100%;
-  }
-
-  .modal-body .habit-list {
-    margin-bottom: 15px;
-  }
-
-  .habit-list svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .modal-body .habit-list span {
+  .navbar .user-img p {
     display: none;
   }
-
-  .modal-body .habit-list .form-check {
-    margin-left: 10px;
+  .card-title {
+    font-size: 14px;
   }
-
-  .modal-body .d-flex.justify-content-center {
-    flex-wrap: wrap;
+  .card-desc {
+    font-size: 12px;
+    width: 90%;
   }
-
-  .modal-body .d-flex.justify-content-center button {
-    width: 100%;
-    margin-bottom: 10px;
+  .add-btn {
+    width: 60px !important;
+    text-align: center;
+  }
+  .card {
+    width: 100% !important;
+  }
+  .count {
+    font-size: 14px !important;
   }
 }

@@ -188,6 +188,8 @@ var card = document.getElementsByClassName(".habbit-card ");
 var modal = document.querySelector(".modal-content");
 var modalInput = document.querySelector(".new-habit-input");
 var cancelbtn = document.querySelector(".footer .modal-cancel");
+var footer = document.querySelector(".footer-logo");
+
 moon.addEventListener("click", enableDarkMode);
 night.addEventListener("click", enableLightMode);
 
@@ -209,7 +211,7 @@ function enableDarkMode() {
   card.style.backgroundColor = "blue";
   modalInput.style.backgroundColor = "#10121a";
   modalInput.style.color = "white";
-  cancelbtn.style.backgroundColor = "red !important";
+  footer.style.color = "white";
 }
 
 // Function to enable light mode
@@ -229,6 +231,7 @@ function enableLightMode() {
   modal.style.color = "black";
   modal.style.backgroundColor = "white";
   card.style.backgroundColor = "black ";
+  footer.style.color = "black";
 }
 
 // allow user to input only three characters
