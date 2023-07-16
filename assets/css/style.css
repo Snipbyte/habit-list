@@ -4,9 +4,10 @@
     url(assets/fonts/Satoshi-Medium.woff) format("woff");
 }
 
-.navbar {
+.navbar , .site-footer  {
   background-color: rgba(31, 33, 41, 0.40);
 }
+
 .logo {
   color: white;
   height: 50px;
@@ -181,7 +182,7 @@ body {
 .habit-list {
   border-radius: 8px;
   border: 1px solid #545864;
-  padding: 15px;
+  padding: 5px;
 }
 .selected {
   border: 1px solid #0031b4;

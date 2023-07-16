@@ -30,13 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // add list
+var habitCount = 0;
 function handleNextButtonClick() {
   var habitListContainer = document.getElementById("habit-list-container");
   var newHabitTitle = document.getElementById("new-habit-input").value;
 
   for (var i = 0; i < selectedHabits.length; i++) {
-    document.getElementById("added-habits").innerText =
-      "(" + selectedHabits.length + ")";
+    habitCount = document.getElementById("added-habits").innerText =
+      selectedHabits.length;
     var selectedHabit = selectedHabits.slice(-1).pop();
     var habitText = selectedHabit.querySelector("span").textContent;
     createHabitCard(habitText, newHabitTitle, habitListContainer);
@@ -164,6 +165,9 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
 
   // Event listener for delete button click
   deleteButton.addEventListener("click", function () {
+    document.getElementById("added-habits").innerText =
+      document.getElementById("added-habits").innerText - 1;
+
     habitCard.remove(); // Remove the habit card from the DOM
   });
 
@@ -192,7 +196,7 @@ var card = document.getElementsByClassName(".habbit-card ");
 var modal = document.querySelector(".modal-content");
 var modalInput = document.querySelector(".new-habit-input");
 var cancelbtn = document.querySelector(".footer .modal-cancel");
-var footer = document.querySelector(".footer-logo");
+var footer = document.querySelector(".footer-section");
 
 moon.addEventListener("click", enableDarkMode);
 night.addEventListener("click", enableLightMode);
