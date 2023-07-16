@@ -22,51 +22,67 @@
 
   <body>
     <div id="main-container" class="w-100 vh-100">
-      <div
-        id="navbar"
-        class="d-block d-flex justify-content-between align-items-center navbar"
-        style="height: 114px"
-      >
-        <h1 id="logo" class="logo">LOGO</h1>
-        <div
-          id="navbar-content"
-          class="navbar-container d-flex align-items-center p-2"
-        >
-          <div class="mode d-flex justify-content-center p-2">
-            <div
-              class="moon-img rounded-circle p-2 d-flex justify-content-center align-items-center"
-            >
-              <img src="assets/images/svg/moon.svg" id="moon" />
-            </div>
-
-            <div class="night-img">
-              <img src="assets/images/svg/night.svg" id="night" />
-            </div>
-          </div>
+      <nav class="navbar navbar-expand-lg d-flex align-items-center">
+        <div class="container-fluid">
+          <h1 id="logo" class="logo">LOGO</h1>
+          <button
+            class="navbar-toggler custom-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-content"
+            aria-controls="navbar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <i class="bi bi-list text-primary"></i>
+            </span>
+          </button>
 
           <div
-            class="notification d-flex align-items-center justify-content-center rounded-circle p-2"
+            id="navbar-content"
+            class="collapse navbar-collapse justify-content-end"
           >
-            <div
-              class="notification-img rounded-circle p-2 d-flex justify-content-center align-items-center"
-            >
-              <img src="assets/images/svg/notification.svg" />
-            </div>
-          </div>
-          <div class="vertical-line"></div>
-          <div
-            class="user-img d-flex align-items-center justify-content-center p-2"
-          >
-            <div>
-              <img src="assets/images/png/user.png" />
-            </div>
-            <div class="user-info d-flex flex-column justify-content-center">
-              <h3 class="user-name">James Bond</h3>
-              <p>Jamesbond007@gmail.com</p>
+            <div class="d-flex align-items-center">
+              <div class="mode d-flex justify-content-center p-2">
+                <div
+                  class="moon-img rounded-circle p-2 d-flex justify-content-center align-items-center"
+                >
+                  <img src="assets/images/svg/moon.svg" id="moon" />
+                </div>
+                <div class="night-img">
+                  <img src="assets/images/svg/night.svg" id="night" />
+                </div>
+              </div>
+
+              <div
+                class="notification d-flex align-items-center justify-content-center rounded-circle p-2"
+              >
+                <div
+                  class="notification-img rounded-circle p-2 d-flex justify-content-center align-items-center"
+                >
+                  <img src="assets/images/svg/notification.svg" />
+                </div>
+              </div>
+              <div class="vertical-line"></div>
+              <div
+                class="user-img d-flex align-items-center justify-content-center p-2"
+              >
+                <div>
+                  <img src="assets/images/png/user.png" />
+                </div>
+                <div
+                  class="user-info d-flex flex-column justify-content-center"
+                >
+                  <h3 class="user-name">James Bond</h3>
+                  <p>Jamesbond007@gmail.com</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </nav>
+
       <!-- card  -->
       <div id="cardContainer">
         <div
@@ -598,7 +614,7 @@
                       background-color: #0031b4;
                     "
                   >
-                    Next ->
+                    Next <i class="bi bi-arrow-right"></i>
                   </button>
                 </div>
               </div>
