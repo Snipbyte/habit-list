@@ -199,7 +199,7 @@ function enableDarkMode() {
 
   night.classList.remove("light-mode");
   body.style.background = "linear-gradient(to right, #082f49, #4a044e)";
-  navbar.style.backgroundColor = "#1f2129";
+  navbar.style.backgroundColor = "rgba(31, 33, 41, 0.40)";
   heading.style.color = "white";
   heading3.style.color = "white";
   title.style.color = "white";
@@ -220,7 +220,7 @@ function enableLightMode() {
 
   moon.classList.remove("dark-mode");
   body.style.background = "linear-gradient(to right, #bae6fd, #fce7f3)";
-  navbar.style.backgroundColor = "white";
+  navbar.style.backgroundColor = "rgba(255, 255, 255, 0.40)";
   heading.style.color = "black";
   heading3.style.color = "black";
   title.style.color = "black";
