@@ -133,7 +133,9 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
   // Create the habit text element
   var habitTextElement = document.createElement("div");
   habitTextElement.className = "habbit-text";
-  habitTextElement.textContent = habitText;
+  // habitTextElement.textContent = habitText; -> to display orginal title
+  habitTextElement.textContent = newHabitTitle;
+
   // Create the input field
   var inputValueElement = document.createElement("div");
   inputValueElement.className = "new-habit-input hidden";
@@ -143,7 +145,7 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
   var deleteButton = document.createElement("button");
   deleteButton.className = "delete-button";
   deleteButton.textContent = "x";
-  
+
   // Apply CSS styles to the delete button
   deleteButton.style.backgroundColor = "transparent";
   deleteButton.style.color = "white";
@@ -152,10 +154,10 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
   deleteButton.style.position = "absolute";
   deleteButton.style.top = "5px";
   deleteButton.style.right = "5px";
-  
+
   // Make the habitCard element have a position of relative
   habitCard.style.position = "relative";
-  
+
   // Event listener for delete button click
   deleteButton.addEventListener("click", function () {
     habitCard.remove(); // Remove the habit card from the DOM
@@ -182,8 +184,10 @@ var title = document.querySelector(".card-body .card-title");
 var body = document.querySelector("body");
 var count = document.querySelector(".count");
 var countNo = document.querySelector(".count span");
-var hText = document.querySelector(".habbit-card ");
-
+var card = document.getElementsByClassName(".habbit-card ");
+var modal = document.querySelector(".modal-content");
+var modalInput = document.querySelector(".new-habit-input");
+var cancelbtn = document.querySelector(".footer .modal-cancel");
 moon.addEventListener("click", enableDarkMode);
 night.addEventListener("click", enableLightMode);
 
@@ -200,7 +204,12 @@ function enableDarkMode() {
   count.style.color = "white";
   countNo.style.color = "white";
   body.style.color = "white";
-  hText.style.color = "white";
+  modal.style.backgroundColor = "#1f2129 ";
+  modal.style.color = "white ";
+  card.style.backgroundColor = "blue";
+  modalInput.style.backgroundColor = "#10121a";
+  modalInput.style.color = "white";
+  cancelbtn.style.backgroundColor = "red !important";
 }
 
 // Function to enable light mode
@@ -215,5 +224,21 @@ function enableLightMode() {
   title.style.color = "black";
   count.style.color = "black";
   countNo.style.color = "black";
-  hText.style.color = "black";
+  modalInput.style.backgroundColor = "white";
+  modalInput.style.color = "black";
+  modal.style.color = "black";
+  modal.style.backgroundColor = "white";
+  card.style.backgroundColor = "black ";
+}
+
+// allow user to input only three characters
+
+function limitInputLength(event) {
+  const input = event.target;
+  const maxLength = 3;
+  const inputValue = input.value;
+
+  if (inputValue.length > maxLength) {
+    input.value = inputValue.slice(0, maxLength);
+  }
 }
