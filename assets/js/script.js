@@ -134,7 +134,11 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
   var habitTextElement = document.createElement("div");
   habitTextElement.className = "habbit-text";
   // habitTextElement.textContent = habitText; -> to display orginal title
-  habitTextElement.textContent = newHabitTitle;
+  if (newHabitTitle !== "") {
+    habitTextElement.textContent = newHabitTitle;
+  } else {
+    habitTextElement.textContent = habitText;
+  }
 
   // Create the input field
   var inputValueElement = document.createElement("div");
