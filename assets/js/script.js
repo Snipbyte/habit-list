@@ -37,7 +37,7 @@ function handleNextButtonClick() {
 
   for (var i = 0; i < selectedHabits.length; i++) {
     habitCount = document.getElementById("added-habits").innerText =
-      selectedHabits.length;
+      habitCount + 1;
     var selectedHabit = selectedHabits.slice(-1).pop();
     var habitText = selectedHabit.querySelector("span").textContent;
     createHabitCard(habitText, newHabitTitle, habitListContainer);
@@ -165,8 +165,7 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
 
   // Event listener for delete button click
   deleteButton.addEventListener("click", function () {
-    document.getElementById("added-habits").innerText =
-      document.getElementById("added-habits").innerText - 1;
+   habitCount= document.getElementById("added-habits").innerText = habitCount - 1;
 
     habitCard.remove(); // Remove the habit card from the DOM
   });
@@ -200,7 +199,7 @@ var footer = document.querySelector(".footer-section");
 
 moon.addEventListener("click", enableDarkMode);
 night.addEventListener("click", enableLightMode);
-
+moon.classList.add("dark-mode");
 // Function to enable dark mode
 function enableDarkMode() {
   moon.classList.add("dark-mode");
@@ -246,10 +245,18 @@ function enableLightMode() {
 
 function limitInputLength(event) {
   const input = event.target;
-  const maxLength = 3;
-  const inputValue = input.value;
+  const maxWords = 3;
+  const inputValue = input.value.trim(); // Remove leading/trailing whitespace
+  const words = inputValue.split(/\s+/);
 
-  if (inputValue.length > maxLength) {
-    input.value = inputValue.slice(0, maxLength);
+  if (words.length > maxWords) {
+    input.value = words.slice(0, maxWords).join(" ");
+  }
+
+  const remainingText = words.slice(maxWords).join(" ");
+  if (remainingText) {
+    const cursorPosition = input.selectionStart - remainingText.length;
+    input.value = input.value.slice(0, cursorPosition);
+    input.setSelectionRange(cursorPosition, cursorPosition);
   }
 }
