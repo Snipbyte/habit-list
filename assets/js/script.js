@@ -141,6 +141,12 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
     habitTextElement.textContent = habitText;
   }
 
+  // active habit card
+  habitCard.addEventListener("click", function () {
+    // Change the state to active by toggling a class
+    habitCard.classList.toggle("active");
+  });
+
   // Create the input field
   var inputValueElement = document.createElement("div");
   inputValueElement.className = "new-habit-input hidden";
@@ -203,6 +209,8 @@ night.addEventListener("click", enableLightMode);
 moon.classList.add("dark-mode");
 // Function to enable dark mode
 function enableDarkMode() {
+  document.body.classList.add("dark-mode");
+  document.body.classList.remove("light-mode");
   moon.classList.add("dark-mode");
 
   night.classList.remove("light-mode");
@@ -224,8 +232,9 @@ function enableDarkMode() {
 
 // Function to enable light mode
 function enableLightMode() {
+  document.body.classList.remove("dark-mode");
+  document.body.classList.add("light-mode");
   night.classList.add("light-mode");
-
   moon.classList.remove("dark-mode");
   body.style.background = "linear-gradient(to right, #bae6fd, #fce7f3)";
   navbar.style.backgroundColor = "rgba(255, 255, 255, 0.40)";
@@ -272,17 +281,16 @@ function showPopup() {
 // checking radio by clicking on parent div
 
 function handleRadioCheck(event) {
-  
   var radioButtons = event.querySelectorAll('input[type="radio"]');
 
   if (radioButtons.length > 0) {
-    radioButtons.forEach(function(radioButton) {
+    radioButtons.forEach(function (radioButton) {
       radioButton.checked = true;
       var selectedHabit = radioButton.closest(".habit-list");
 
       if (radioButton.checked) {
         selectedHabits.push(selectedHabit);
-    
+
         console.log(selectedHabits);
       } else {
         var index = selectedHabits.indexOf(selectedHabit);
@@ -291,10 +299,6 @@ function handleRadioCheck(event) {
         }
       }
     });
-
-    
   } else {
-    
   }
 }
-

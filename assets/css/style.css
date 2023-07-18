@@ -213,13 +213,33 @@ body {
 .habbit-card {
   width: 186px;
   height: 130px;
-  background: #395b64;
+  background: transparent;
+  border: 5px solid #395b64;
   border-radius: 10px;
   margin-left: 25px;
   margin-top: 25px;
 }
+.dark-mode .habbit-card {
+  border-color: #395b64 !important; 
+  color: white;
+}
+
+/* Light Mode styles for habit cards */
+.light-mode .habbit-card {
+  border-color : #A5C9CA !important ;
+  color: black
+}
+.light-mode .habbit-card.active{
+  background-color: #A5C9CA  !important;
+}
+.dark-mode .habbit-card.active{
+  background-color: #395b64 !important;
+}
+.habbit-card.active {
+  background-color: #395b64;
+}
 .habbit-card:hover {
-  background-color: #2c3333;
+  /* background-color: #2c3333; */
   cursor: pointer;
 }
 .habbit-icon {
@@ -270,7 +290,7 @@ body {
 /* Styles for dark mode */
 .dark-mode {
   background-color: #0031b4;
-  padding: 5px;
+ 
   border-radius: 50%;
   color: white;
 }
