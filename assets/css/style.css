@@ -4,8 +4,9 @@
     url(assets/fonts/Satoshi-Medium.woff) format("woff");
 }
 
-.navbar , .site-footer  {
-  background-color: rgba(31, 33, 41, 0.40);
+.navbar,
+.site-footer {
+  background-color: rgba(31, 33, 41, 0.4);
 }
 
 .logo {
@@ -128,6 +129,61 @@ body {
   height: 100vh;
   margin: 0;
 }
+.shadowed-element {
+  position: absolute;
+  height: 352px;
+  width: 352px;
+  border-radius: 50%;
+  background-color: #0031b4;
+  backdrop-filter: blur(794px);
+  filter: blur(794px);
+  z-index: 0;
+  opacity: 1;
+  box-shadow: 0 0 10px #0031b4;
+  top: 46px;
+}
+.shadowed-element1 {
+  position: absolute;
+  height: 352px;
+  width: 352px;
+  border-radius: 50%;
+  background-color: #00b49e;
+  backdrop-filter: blur(794px);
+  filter: blur(794px);
+  z-index: 0;
+  opacity: 1;
+  box-shadow: 0 0 10px #00b49e;
+  bottom: 0;
+  left: 170px;
+}
+.shadowed-element2 {
+  position: absolute;
+  height: 352px;
+  width: 352px;
+  border-radius: 50%;
+  background-color: #b400ad;
+  backdrop-filter: blur(794px);
+  filter: blur(794px);
+  z-index: 0;
+  opacity: 1;
+  box-shadow: 0 0 10px #b400ad;
+  top: 46px;
+  right: 40px;
+}
+.shadowed-element3 {
+  position: absolute;
+  height: 352px;
+  width: 352px;
+  border-radius: 50%;
+  background-color: #8500b4;
+  backdrop-filter: blur(794px);
+  filter: blur(794px);
+  z-index: 0;
+  opacity: 1;
+  box-shadow: 0 0 10px #8500b4;
+  bottom: 0;
+  right: 0px;
+}
 .card-title {
   font-size: 25px;
   font-style: normal;
@@ -195,7 +251,7 @@ body {
   height: 60px;
   border-radius: 8px;
   border: 1px solid #545864;
-  background-color: #10121a;
+  /* background-color: #10121a; */
   outline: none;
 }
 .new-habit-input::placeholder {
@@ -228,7 +284,19 @@ body {
 }
 
 /* media queries  */
+@media (max-width: 990px) and (min-width: 769px) {
+  .notification #popup-content {
+    top: 195px !important;
+    left: 2px !important;
+    width: 200px !important;
+  }
+}
 @media (max-width: 768px) {
+  .notification #popup-content {
+    top: 125px !important;
+    left: 10px;
+    width: 200px !important;
+  }
   .navbar {
     padding: 0 20px;
   }

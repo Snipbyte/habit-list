@@ -165,7 +165,8 @@ function createHabitCard(habitText, newHabitTitle, habitListContainer) {
 
   // Event listener for delete button click
   deleteButton.addEventListener("click", function () {
-   habitCount= document.getElementById("added-habits").innerText = habitCount - 1;
+    habitCount = document.getElementById("added-habits").innerText =
+      habitCount - 1;
 
     habitCard.remove(); // Remove the habit card from the DOM
   });
@@ -216,7 +217,7 @@ function enableDarkMode() {
   modal.style.backgroundColor = "#1f2129 ";
   modal.style.color = "white ";
   card.style.backgroundColor = "blue";
-  modalInput.style.backgroundColor = "#10121a";
+
   modalInput.style.color = "white";
   footer.style.color = "white";
 }
@@ -233,7 +234,7 @@ function enableLightMode() {
   title.style.color = "black";
   count.style.color = "black";
   countNo.style.color = "black";
-  modalInput.style.backgroundColor = "white";
+
   modalInput.style.color = "black";
   modal.style.color = "black";
   modal.style.backgroundColor = "white";
@@ -260,3 +261,40 @@ function limitInputLength(event) {
     input.setSelectionRange(cursorPosition, cursorPosition);
   }
 }
+
+// for popup
+function showPopup() {
+  var popup = document.getElementById("popup-content");
+
+  popup.classList.toggle("d-none");
+}
+
+// checking radio by clicking on parent div
+
+function handleRadioCheck(event) {
+  
+  var radioButtons = event.querySelectorAll('input[type="radio"]');
+
+  if (radioButtons.length > 0) {
+    radioButtons.forEach(function(radioButton) {
+      radioButton.checked = true;
+      var selectedHabit = radioButton.closest(".habit-list");
+
+      if (radioButton.checked) {
+        selectedHabits.push(selectedHabit);
+    
+        console.log(selectedHabits);
+      } else {
+        var index = selectedHabits.indexOf(selectedHabit);
+        if (index !== -1) {
+          selectedHabits.splice(index, 1);
+        }
+      }
+    });
+
+    
+  } else {
+    
+  }
+}
+

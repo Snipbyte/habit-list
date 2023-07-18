@@ -21,8 +21,12 @@
   </head>
 
   <body>
+    <div class="shadowed-element"></div>
+    <div class="shadowed-element1"></div>
+    <div class="shadowed-element2"></div>
+    <div class="shadowed-element3"></div>
     <div id="main-container" class="w-100 vh-100">
-      <nav class="navbar navbar-expand-lg d-flex align-items-center">
+      <nav class="navbar navbar-expand-lg d-flex align-items-center shadow-lg">
         <div class="container-fluid">
           <h1 id="logo" class="logo">LOGO</h1>
           <button
@@ -50,20 +54,75 @@
                 >
                   <img src="assets/images/svg/moon.svg" id="moon" />
                 </div>
+
                 <div class="night-img">
                   <img src="assets/images/svg/night.svg" id="night" />
                 </div>
               </div>
 
               <div
-                class="notification d-flex align-items-center justify-content-center rounded-circle p-2"
+                class="notification d-flex align-items-center justify-content-center rounded-circle p-2 relative"
               >
                 <div
                   class="notification-img rounded-circle p-2 d-flex justify-content-center align-items-center"
+                  onclick="showPopup()"
                 >
-                  <img src="assets/images/svg/notification.svg" />
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="25" cy="25" r="25" fill="#2B1F36" />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M24.9775 15.2867C22.0108 15.2867 19.6059 17.6916 19.6059 20.6582V22.7644C19.6059 23.4818 19.3744 24.1214 19.0986 24.6738C18.9055 25.0608 18.6635 25.4529 18.4473 25.8033C18.3661 25.935 18.2884 26.0608 18.2184 26.1783C17.988 26.5646 17.8554 27.016 17.8554 27.5005C17.8554 28.7548 18.7475 29.8045 19.9549 29.9718C21.5357 30.1911 23.4758 30.4061 24.9775 30.4061C26.4791 30.4061 28.4193 30.1911 30 29.9718C31.2074 29.8045 32.0995 28.7548 32.0995 27.5005C32.0995 27.016 31.9669 26.5646 31.7365 26.1783C31.6665 26.0608 31.5888 25.935 31.5076 25.8033C31.2914 25.4529 31.0494 25.0608 30.8563 24.6738C30.5806 24.1214 30.3491 23.4819 30.3491 22.7644V20.6582C30.3491 17.6916 27.9441 15.2867 24.9775 15.2867ZM18.0961 20.6582C18.0961 16.8578 21.177 13.7769 24.9775 13.7769C28.7779 13.7769 31.8588 16.8578 31.8588 20.6582V22.7644C31.8588 23.1544 31.9841 23.5529 32.2071 23.9994C32.3682 24.3223 32.5531 24.6217 32.7547 24.9484C32.8444 25.0937 32.9374 25.2445 33.0332 25.405C33.3992 26.0187 33.6092 26.7362 33.6092 27.5005C33.6092 29.4729 32.196 31.1916 30.2074 31.4673C28.6143 31.6882 26.5886 31.9159 24.9775 31.9159C23.3664 31.9159 21.3406 31.6882 19.7475 31.4673C17.7589 31.1916 16.3457 29.4729 16.3457 27.5005C16.3457 26.7362 16.5558 26.0187 16.9217 25.405C17.0175 25.2445 17.1105 25.0937 17.2002 24.9484C17.4018 24.6217 17.5867 24.3223 17.7479 23.9994C17.9708 23.5529 18.0961 23.1544 18.0961 22.7644V20.6582Z"
+                      fill="white"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M27.5834 32.8595C27.2361 32.6287 26.7676 32.723 26.5368 33.0701C26.2004 33.5761 25.6274 33.9069 24.9774 33.9069C24.3274 33.9069 23.7544 33.5761 23.4179 33.0701C23.1871 32.723 22.7186 32.6287 22.3714 32.8595C22.0243 33.0904 21.9299 33.5589 22.1608 33.906C22.7651 34.815 23.8008 35.4167 24.9774 35.4167C26.154 35.4167 27.1896 34.815 27.794 33.906C28.0248 33.5589 27.9305 33.0904 27.5834 32.8595Z"
+                      fill="white"
+                    />
+                    <circle
+                      cx="29.6875"
+                      cy="15.1042"
+                      r="4.1875"
+                      fill="#3CD34B"
+                      stroke="#2F323A"
+                    />
+                  </svg>
+                </div>
+                <div
+                  id="popup-content"
+                  class="bg-light d-none rounded-3"
+                  style="position: absolute; top: 100px; right: 255px"
+                >
+                  <div class="notification-body p-3">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="mb-2" style="color: black !important">
+                        Notifications
+                      </h4>
+                      <h5
+                        class="mb-2 ms-3"
+                        onclick="showPopup()"
+                        style="cursor: pointer; color: black !important"
+                      >
+                        x
+                      </h5>
+                    </div>
+                    <ul class="" style="color: black !important">
+                      <li>Notification 1</li>
+                      <li>Notification 2</li>
+                      <li>Notification 3</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
+
               <div class="vertical-line"></div>
               <div
                 class="user-img d-flex align-items-center justify-content-center p-2"
@@ -145,10 +204,17 @@
         </div>
       </div>
       <!-- habbit list  -->
-      <div id="habbitList" class="text-white" style="display: none">
+      <div
+        id="habbitList"
+        class="text-white"
+        style="display: none; min-height: 340px"
+      >
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="count">Added Habits <span id="added-habits"></span></h2>
+          <h2 style="position: relative; z-index: 1" class="count">
+            Added Habits <span id="added-habits"></span>
+          </h2>
           <button
+            style="position: relative; z-index: 1"
             type="button"
             data-bs-toggle="modal"
             data-bs-target="#habitmodal"
@@ -175,6 +241,10 @@
                   <h5
                     class="modal-title d-flex justify-content-center"
                     id="habitmodalLabel"
+                  ></h5>
+                  <h5
+                    class="modal-title d-flex justify-content-center"
+                    id="habitmodalLabel"
                   >
                     Add a new habit
                   </h5>
@@ -197,14 +267,18 @@
                   <div class="new-habit" style="margin-bottom: 20px">
                     <input
                       style="height: 40px"
-                      class="new-habit-input"
+                      class="new-habit-input bg-transparent"
                       placeholder="Enter title here..."
                       id="new-habit-input"
                       oninput="limitInputLength(event)"
                     />
                   </div>
                   <!-- list 1  -->
-                  <div class="habit-list" style="margin-bottom: 20px">
+                  <div
+                    class="habit-list"
+                    style="margin-bottom: 20px"
+                    onclick="handleRadioCheck(this)"
+                  >
                     <div
                       class="d-flex align-items-center justify-content-between"
                     >
@@ -259,7 +333,11 @@
                     </div>
                   </div>
                   <!-- list 2  -->
-                  <div class="habit-list" style="margin-bottom: 20px">
+                  <div
+                    class="habit-list"
+                    style="margin-bottom: 20px"
+                    onclick="handleRadioCheck(this)"
+                  >
                     <div
                       class="d-flex align-items-center justify-content-between"
                     >
@@ -330,7 +408,11 @@
                     </div>
                   </div>
                   <!-- list 3  -->
-                  <div class="habit-list" style="margin-bottom: 20px">
+                  <div
+                    class="habit-list"
+                    style="margin-bottom: 20px"
+                    onclick="handleRadioCheck(this)"
+                  >
                     <div
                       class="d-flex align-items-center justify-content-between"
                     >
@@ -392,7 +474,11 @@
                     </div>
                   </div>
                   <!-- list 4  -->
-                  <div class="habit-list" style="margin-bottom: 20px">
+                  <div
+                    class="habit-list"
+                    style="margin-bottom: 20px"
+                    onclick="handleRadioCheck(this)"
+                  >
                     <div
                       class="d-flex align-items-center justify-content-between"
                     >
@@ -454,7 +540,11 @@
                     </div>
                   </div>
                   <!-- list 5  -->
-                  <div class="habit-list" style="margin-bottom: 20px">
+                  <div
+                    class="habit-list"
+                    style="margin-bottom: 20px"
+                    onclick="handleRadioCheck(this)"
+                  >
                     <div
                       class="d-flex align-items-center justify-content-between"
                     >
@@ -508,7 +598,11 @@
                     </div>
                   </div>
                   <!-- list 6  -->
-                  <div class="habit-list" style="margin-bottom: 20px">
+                  <div
+                    class="habit-list"
+                    style="margin-bottom: 20px"
+                    onclick="handleRadioCheck(this)"
+                  >
                     <div
                       class="d-flex align-items-center justify-content-between"
                     >
@@ -583,7 +677,7 @@
                   </div>
                 </div>
                 <div
-                  class="d-flex justify-content-center footer "
+                  class="d-flex justify-content-center footer"
                   style="margin-bottom: 20px"
                 >
                   <button
@@ -606,7 +700,8 @@
                     id="next-button"
                     onclick="addHabitCard()"
                     type="button"
-                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    class="btn btn-primary modal-cancel"
                     style="
                       border-radius: 8px;
                       height: 60px;
@@ -623,20 +718,24 @@
           </div>
         </div>
         <!-- list added  -->
-        <div class="row habbit-card-row" id="habit-list-container"></div>
+        <div
+          style="position: relative; z-index: 1"
+          class="row habbit-card-row"
+          id="habit-list-container"
+        ></div>
       </div>
 
       <!-- footer  -->
-      <footer class="fixed-bottom  rounded mt-2 site-footer bg-transparent  shadow-lg " style="height: 60px; padding: 15px; border-color: #0031b4 !important;">
+      <footer
+        class="rounded mt-2 site-footer bg-transparent shadow-lg"
+        style="height: 60px; padding: 15px; border-color: #0031b4 !important"
+      >
         <div class="container d-flex justify-content-between footer-section">
           <div>
             <span class="footer-logo text-primary">Logo here</span>
           </div>
-          <div >
-           
-          </div>
+          <div></div>
           <div class="icons">
-
             <ul class="d-flex gap-3 list-unstyled">
               <li>
                 <a href="#"><i class="bi bi-github"></i></a>
